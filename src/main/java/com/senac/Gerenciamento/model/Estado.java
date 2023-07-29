@@ -1,8 +1,6 @@
 package com.senac.Gerenciamento.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Estado {
@@ -15,6 +13,9 @@ public class Estado {
     private String sigla;
     @Column(name = "POPULACAO")
     private Double populacao;
+    @ManyToOne
+    @JoinColumn(name = "I_PAISES", referencedColumnName = "ID")
+    private Pais pais;
 
 
     public Estado() {

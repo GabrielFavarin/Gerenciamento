@@ -1,8 +1,6 @@
 package com.senac.Gerenciamento.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Pais {
@@ -15,7 +13,7 @@ public class Pais {
     private String sigla;
     @Column(name = "POPULACAO")
     private Double populacao;
-//teste
+
     public Pais() {
     }
 
