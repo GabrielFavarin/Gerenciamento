@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Estado {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "NOME")
     private String nome;
@@ -17,6 +18,13 @@ public class Estado {
     @JoinColumn(name = "I_PAISES", referencedColumnName = "ID")
     private Pais pais;
 
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
 
     public Estado() {
     }

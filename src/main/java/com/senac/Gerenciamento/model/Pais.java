@@ -1,28 +1,27 @@
 package com.senac.Gerenciamento.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 @Entity
 public class Pais {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotNull
     @Column(name = "NOME")
     private String nome;
+
     @Column(name = "SIGLA")
     private String sigla;
+
     @Column(name = "POPULACAO")
     private Double populacao;
 
     public Pais() {
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getNome() {
@@ -47,5 +46,13 @@ public class Pais {
 
     public void setPopulacao(Double populacao) {
         this.populacao = populacao;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
